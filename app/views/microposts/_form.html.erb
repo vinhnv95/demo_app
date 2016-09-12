@@ -17,7 +17,8 @@
   </div>
   <div class="field">
     <%= f.label :user_id %>
-    <%= f.select :user_id, options_for_select(User.pluck(:id)) %>
+    <!--<%= f.select :user_id, options_for_select(User.pluck(:id)) %>-->
+    <%= f.select :user_id, options_for_select(User.all.collect {|x| [ x.name, x.id ] }) %>
   </div>
 
   <div class="actions">
